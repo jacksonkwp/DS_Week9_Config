@@ -31,6 +31,18 @@ spring:
         - Path=/license/**
         filters:
         - RewritePath=/license/(?<path>.*), /$\{path}
+      - id: google
+        uri: http://www.google.com
+        predicates:
+        - Path=/google
+        filters:
+        - RedirectTo=302, http://www.google.com
+      - id: baylor
+        uri: http://www.baylor.edu
+        predicates:
+        - Path=/google
+        filters:
+        - RedirectTo=302, http://www.baylor.edu
 
 
 management:
