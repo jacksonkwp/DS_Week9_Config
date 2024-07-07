@@ -18,31 +18,31 @@ spring:
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
-      # routes:
-      # - id: organization-service
-      #   uri: lb://organization-service
-      #   predicates:
-      #   - Path=/organization/**
-      #   filters:
-      #   - RewritePath=/organization/(?<path>.*), /$\{path}
-      # - id: licensing-service
-      #   uri: lb://licensing-service
-      #   predicates:
-      #   - Path=/license/**
-      #   filters:
-      #   - RewritePath=/license/(?<path>.*), /$\{path}
-      # - id: google
-      #   uri: http://www.google.com
-      #   predicates:
-      #   - Path=/google
-      #   filters:
-      #   - RedirectTo=302, http://www.google.com
-      # - id: baylor
-      #   uri: http://www.baylor.edu
-      #   predicates:
-      #   - Path=/baylor
-      #   filters:
-      #   - RedirectTo=302, http://www.baylor.edu
+      routes:
+      - id: organization-service
+        uri: lb://organization-service
+        predicates:
+        - Path=/organization/**
+        filters:
+        - RewritePath=/organization/(?<path>.*), /$\{path}
+      - id: licensing-service
+        uri: lb://licensing-service
+        predicates:
+        - Path=/license/**
+        filters:
+        - RewritePath=/license/(?<path>.*), /$\{path}
+      - id: google
+        uri: http://www.google.com
+        predicates:
+        - Path=/google
+        filters:
+        - RedirectTo=302, http://www.google.com
+      - id: baylor
+        uri: http://www.baylor.edu
+        predicates:
+        - Path=/baylor
+        filters:
+        - RedirectTo=302, http://www.baylor.edu
 
 
 management:
