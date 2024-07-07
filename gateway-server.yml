@@ -40,7 +40,7 @@ spring:
       - id: baylor
         uri: http://www.baylor.edu
         predicates:
-        - Path=/google
+        - Path=/baylor
         filters:
         - RedirectTo=302, http://www.baylor.edu
 
